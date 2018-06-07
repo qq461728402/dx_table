@@ -21,7 +21,14 @@
             sliders: {
                 type: Object,
                 default: () => {}
-        }
+            },
+            del:{
+                type: Number,//数据类型 String Number Boolean Function Object Array
+                default: 0,//默认
+                required: true,//是否必填
+            }
+
+
     },
     data () {
         return {
@@ -67,57 +74,70 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="sass" rel="stylesheet/stylus">
-    .slider
-        position:relative
-        overflow: hidden
-        margin:0
-        padding:0
-        .slider-wrapper
-            width:100%
-            height:100%
-            list-style:none
-            overflow: hidden
-            margin:0
-            padding:0
-            .slider-item
-                position:absolute
-                width:100%
-                height:100%
-                overflow: hidden
-                img
-                    width:100%
-                    height:100%
-                &.move-enter-active
-                    transition: all 0.5s ease
-                    transform: translateX(0)
-                &.move-leave-active
-                    transition: all 0.5s ease
-                    transform: translateX(-100%)
-                &.move-enter
-                    transform: translateX(100%)
-                &.move-leave
-                    transform: translateX(0)
-                &.fade-enter-active, .fade-leave-active
-                    transition: opacity 1s
-                &.fade-enter, .fade-leave-active
-                    opacity: 0.5
-        .dots
-            position: absolute
-            right: 0
-            left: 0
-            bottom: 20px
-            text-align: center
-            font-size: 0
-            .dot
-                display: inline-block
-                margin: 0 4px
-                width: 8px
-                height: 8px
-                border-radius: 50%
-                background: rgba(255,255,255,0.6)
-                &.active
-                    width: 20px
-                    border-radius: 5px
-                    background: rgba(255,255,255,0.9)
+<style scoped>
+    .slider{
+        position:relative;
+        overflow: hidden;
+        margin:0;
+        padding:0;
+    }
+    .slider-wrapper{
+        width:100%;
+        height:100%;
+        list-style:none;
+        overflow: hidden;
+        margin:0;
+        padding:0;
+    }
+    .slider-item {
+        position:absolute;
+        width:100%;
+        height:100%;
+        overflow: hidden;
+    }
+    .slider-item img{
+        width:100%
+        height:100%
+    }
+    .slider-item .move-enter-active{
+        transition: all 0.5s ease;
+        transform: translateX(0)
+    }
+    .slider-item .move-leave-active{
+        transition: all 0.5s ease;
+        transform: translateX(-100%)
+    }
+    .slider-item .move-enter{
+        transform: translateX(100%)
+    }
+    .slider-item .move-leave{
+        transform: translateX(0)
+    }
+    .slider-item .fade-enter-active, .fade-leave-active{
+        transition: opacity 1s
+    }
+    .slider-item .fade-enter, .fade-leave-active{
+        opacity: 0.5
+    }
+    .dots{
+        position: absolute;
+        right: 0;
+        left: 0;
+        bottom: 20px;
+        text-align: center;
+        font-size: 0;
+    }
+    .dots  .dot{
+        display: inline-block;
+        margin: 0 4px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.6);
+    }
+    .dot .active{
+        width: 20px;
+        border-radius: 5px;
+        background: rgba(255,255,255,0.9)
+    }
 </style>

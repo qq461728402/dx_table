@@ -1,10 +1,10 @@
 /**
  * Created by dx on 18/6/6.
  */
-import Slider from './slider.vue'
+import Slider from './Scratchable.vue'
 const comment = {
     install: function(Vue) {
-        Vue.component('Slider', Slider)
+        Vue.component('Slider', Slider);
     }
 }
 // 这里的判断很重要

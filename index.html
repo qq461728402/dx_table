@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
+<html lang="en" style="font-size: 50px;">
+<head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="email=no">
+    <meta name="wap-font-scale" content="no">
     <title>dx_table</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script src="/dist/vue-slider.js"></script>
-  </body>
+</head>
+<body>
+<div id="app">
+    <Slider :list="dataList" :num="5"></Slider>
+</div>
+<script src=" https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
+<script src="dist/vue-slider.js"></script>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                dataList: [
+                    {url: 'http://weixin.e-cbest.com/dqtest/home/primaryMenu/7.png', text: '冰箱',id:1},
+                    {url: 'http://weixin.e-cbest.com/dqtest/home/primaryMenu/7.png', text: '冰箱',id:2},
+                    {url: 'http://weixin.e-cbest.com/dqtest/home/primaryMenu/7.png', text: '冰箱',id:3},
+                    {url: 'http://weixin.e-cbest.com/dqtest/home/primaryMenu/7.png', text: '冰箱',id:4},
+                    {url: 'http://weixin.e-cbest.com/dqtest/home/primaryMenu/7.png', text: '冰箱',id:5},
+                    {url: 'http://weixin.e-cbest.com/dqtest/home/primaryMenu/7.png', text: '冰箱',id:6}
+                ],
+            }
+        }
+    })
+</script>
 </html>
