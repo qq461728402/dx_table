@@ -12,7 +12,7 @@
 </head>
 <body>
 <div id="app">
-    <Slider :list="dataList" :num="5"></Slider>
+    <Slider :list="dataList" :num="3" :callback="clickI"></Slider>
 </div>
 <script src=" https://cdn.bootcss.com/vue/2.2.2/vue.min.js"></script>
 <script src="dist/vue-slider.js"></script>
@@ -31,7 +31,12 @@
                     {url: 'http://weixin.e-cbest.com/dqtest/home/primaryMenu/7.png', text: '冰箱',id:6}
                 ],
             }
-        }
+        },
+        methods:{
+            clickI(item){
+                console.log(item);
+            }
+        },
     })
 </script>
 </html>

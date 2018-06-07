@@ -1,7 +1,7 @@
 <template>
     <div :class="classes">
         <div v-for="item,index in list" :key="index" class="yd-grids-item">
-            <div class="yd-grids-icon">
+            <div class="yd-grids-icon" @click="gotoLink(item)">
                 <img :src="item.url">
             </div>
             <div class="yd-grids-txt">
@@ -13,6 +13,9 @@
 <script type="text/ecmascript-6">
     export default {
         props: {
+            callback:{
+              type:Function,
+            },
             list: {
                 type:Array,
                 required:true
@@ -37,7 +40,11 @@
             },
         },
         methods: {
-
+            gotoLink(item){
+                if (this.callback){
+                    this.callback(item);
+                }
+            }
         },
         mounted () {
             console.log(this.list);
